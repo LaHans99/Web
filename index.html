@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="mensaje" class = "container"> <h1>{{ message }}</h1> </div>
+            <div id = "loop" class = "container">
+                
+                <label>Nombre: </label><input type="text" v-model="nombre" placeholder="Escribe tu nombre" style="width: 300px;" />
+
+                <h2>Planea tu viaje, {{nombre}}</h2>
+                <p>Presiona el boton para cambiar tu ciudad</p>
+
+                <div class = "row">
+                    <div class = "col">
+                        <button class = "btn-primary" @click = "cambiar_ciudad">{{ bandera ? 'Ir a Seul' : 'Ir a Paris' }}</button>
+                    </div>
+                </div>
+                <h2>Lugares para pasear en {{ciudad}}</h2>
+
+                <div>
+                
+                    <div v-if = "bandera">
+
+                        <div v-for= "lugar in paris" class = "row m-3">
+                            <img :src = "lugar.img" style="width: 200px; height: 300px;">
+                            <div class = "col">
+                                <h4>{{lugar.titulo}}</h4>
+                                <p>{{lugar.estrellas}}</p>
+                            </div>
+                        </div>
+                            
+                    </div>
+                    <div v-if = "!bandera">
+                        <div v-for= "lugar in seul" class = "row m-3">
+                            <img :src = "lugar.img" style="width: 200px; height: 300px;">
+                            <div class = "col">
+                                <h4>{{lugar.titulo}}</h4>
+                                <p>{{lugar.estrellas}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        <script src="app.js"></script>
+    </body>
+</html>
