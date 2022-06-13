@@ -29,7 +29,7 @@
             <!--large-->
             <div class="row justify-content-evenly">
                 <!--SubirRecetas-->
-                <div class="col-lg-3 bg-light overflow-hidden  scrollbar d-none d-lg-block" style="max-width: 360px; height: 100vh;">
+                <div class="col-lg-3 bg-light overflow-hidden  scrollbar d-none d-lg-block" style="max-width: 400px; height: 100vh;">
                     <h1 class=" my-3 text-danger text-center fw-bold" style="font-size: 1.5rem">Agrega tus recetas!</h1>
                     <form>
                          <!-- //////////////////////
@@ -41,46 +41,52 @@
                                 </div>
                             </div>
                         -->
-                        <div class="list roundBorder">
-                            <div class="date">
-                                <div class="dateRight">
-                                    <div id="dateNumber"></div>
-                                    <div>
-                                        <div id="dateMonth"></div>
-                                        <div id="dateYear"></div>
-                                    </div>
-                                </div>
-                                <div id="dateText"></div>
-                            </div>
-                            <form onsubmit="addNewTask(event)" >
-                                <input type="text" name="taskText" autocomplete="off" placeholder="Nuevo ingrediente" class="roundBorder">
-                                <button type="submit" class="addTaskButton">+</button>
-                                <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
-                            </form>
-                            <div id="tasksContainer"></div>
-                        </div>
-
+                       
                     
 
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="form-control my-3" placeholder="Preparacion"/>
+                                    <input type="text" class="form-control my-3" rows = "3" placeholder="Preparacion"/>
                                 </div>
                             </div>
-                            <div class="row">
+                           <!-- <div class="row">
                                 <div class="col">
-                                    <input type="file" class="form-control  my-3" id="customFile" placeholder="imagen" />
+                                  
                                 </div>
+                             
                             </div>
+                            -->
+                          
                     </form>
+                    <input type="file" class="form-control " id="customFile" placeholder="imagen" />
                     <div class="text-center mb-3">
                             <a href="#">
                                 <button class="btn btn-danger btn-lg fs-small">Upload</button>
                             </a>
                     </div>
                     
-                </div>
                 
+
+                <div class="list roundBorder">
+                    <div class="date">
+                        <div class="dateRight">
+                            <div id="dateNumber"></div>
+                            <div>
+                                <div id="dateMonth"></div>
+                                <div id="dateYear"></div>
+                            </div>
+                        </div>
+                        <div id="dateText"></div>
+                    </div>
+                    <form onsubmit="addNewTask(event)" >
+                        <input type="text" name="taskText" autocomplete="off" placeholder="Nuevo ingrediente" class="roundBorder">
+                        <button type="submit" class="addTaskButton">+</button>
+                       <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+                    </form>
+                    <div id="tasksContainer"></div>
+                </div>
+
+            </div> 
                 <!--Timeline-->
                 <div class="col-lg-6 overflow-hidden  scrollbar d-none d-lg-block"style="max-width: 720px; height: 100vh;">
                     holi
